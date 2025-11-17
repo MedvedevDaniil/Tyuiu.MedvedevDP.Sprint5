@@ -21,14 +21,15 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task1.V16.Lib
                 {
                     y = Math.Sin(x) + (2.0 * x) / 3.0 - Math.Cos(x) * 4 * x;
                 }
-                catch (DivideByZeroException)
+                catch
                 {
                     y = 0;
                 }
 
                 y = Math.Round(y, 2);
 
-                string strY = y.ToString();
+                string strY = y.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)
+                                .Replace('.', ',');
 
                 if (x != stopValue)
                 {
