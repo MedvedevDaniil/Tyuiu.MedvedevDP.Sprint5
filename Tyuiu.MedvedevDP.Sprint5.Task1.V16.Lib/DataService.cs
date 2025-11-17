@@ -26,7 +26,7 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task1.V16.Lib
                     y = 0;
                 }
 
-                y = Math.Round(y, 3);
+                y = Math.Round(y, 2);
 
                 string strY = y.ToString();
 
