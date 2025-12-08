@@ -24,18 +24,23 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
                 {
                     for (int i = 0; i < line.Length; i++)
                     {
-                        if (!(line[i] >= 'а' && line[i] <= 'я'))
+                        if (line[i] >= 'а' && line[i] <= 'я')
                         {
-                            strLine = strLine + line[i];
+                            continue;
                         }
+
+                        if (line[i] == ' ' && (i + 1 < line.Length && line[i + 1] == '?'))
+                        {
+                            continue;
+                        }
+
+                        strLine = strLine + line[i];
                     }
 
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = ""; 
+                    strLine = "";
                 }
             }
-            strLine = strLine.Replace("?О", "? О");
-            strLine = strLine.Replace(".", ". ");
             return pathSaveFile;
         }
     }
