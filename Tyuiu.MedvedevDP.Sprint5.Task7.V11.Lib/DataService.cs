@@ -33,10 +33,11 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
 
                     strLine = Regex.Replace(strLine, @"\s+", " ");
 
+
                     strLine = strLine.Replace(", ?", ",?");
 
 
-                    strLine = strLine.Replace(" .", ".");
+                    strLine = strLine.Replace(" . ", ". ");
 
                     strLine = strLine.Trim();
 
