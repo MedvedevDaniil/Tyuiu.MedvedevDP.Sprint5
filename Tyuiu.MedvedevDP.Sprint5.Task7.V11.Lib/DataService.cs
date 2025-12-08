@@ -24,17 +24,16 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
                 {
                     for (int i = 0; i < line.Length; i++)
                     {
-                        if (!(line[i] >= 'а' && line[i] <= 'я'))
+                        if ((line[i] != ' ') && !(line[i] >= 'а' && line[i] <= 'я'))
                         {
                             strLine = strLine + line[i];
                         }
                     }
 
-                    strLine = strLine.Replace(", ?", ",?");
-
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
-                    strLine = "";
+                    strLine = ""; 
                 }
+                strLine = strLine.Replace(", ?", ",?");
             }
 
             return pathSaveFile;
