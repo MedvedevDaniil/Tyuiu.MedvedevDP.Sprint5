@@ -33,9 +33,8 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = ""; 
                 }
-                strLine = strLine.Replace(", ?", ",?");
             }
-
+            strLine = strLine.Replace(", ?", ",?");
             return pathSaveFile;
         }
     }
