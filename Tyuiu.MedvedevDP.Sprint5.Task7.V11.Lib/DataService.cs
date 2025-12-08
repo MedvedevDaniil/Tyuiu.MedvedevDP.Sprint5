@@ -34,7 +34,6 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
                     strLine = ""; 
                 }
             }
-            strLine = strLine.Replace(", ?", ",?");
             return pathSaveFile;
         }
     }
