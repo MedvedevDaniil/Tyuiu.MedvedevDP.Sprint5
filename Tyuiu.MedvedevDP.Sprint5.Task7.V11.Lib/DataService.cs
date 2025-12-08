@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text.RegularExpressions;
 using tyuiu.cources.programming.interfaces.Sprint5;
 
 namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
@@ -24,18 +25,20 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Lib
                 {
                     for (int i = 0; i < line.Length; i++)
                     {
-                        if (line[i] >= 'а' && line[i] <= 'я')
+                        if (!(line[i] >= 'а' && line[i] <= 'я'))
                         {
-                            continue;
+                            strLine = strLine + line[i];
                         }
-
-                        if (line[i] == ' ' && (i + 1 < line.Length && line[i + 1] == '?'))
-                        {
-                            continue;
-                        }
-
-                        strLine = strLine + line[i];
                     }
+
+                    strLine = Regex.Replace(strLine, @"\s+", " ");
+
+                    strLine = strLine.Replace(", ?", ",?");
+
+
+                    strLine = strLine.Replace(" .", ".");
+
+                    strLine = strLine.Trim();
 
                     File.AppendAllText(pathSaveFile, strLine + Environment.NewLine);
                     strLine = "";
