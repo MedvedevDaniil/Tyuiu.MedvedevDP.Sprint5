@@ -21,7 +21,7 @@ namespace Tyuiu.MedvedevDP.Sprint5.Task7.V11.Test
 
             string wait = "HelloМ!test";
 
-            Assert.AreEqual(wait, fileContent.Trim());
+            Assert.AreEqual(wait, fileContent);
         }
 
         [TestMethod]
